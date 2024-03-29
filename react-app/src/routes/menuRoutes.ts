@@ -1,5 +1,6 @@
 import { LazyExoticComponent, lazy } from "react";
-import { NoLazy } from "../lazyload/pages/NoLazy";
+// import { NoLazy } from "../lazyload/pages/NoLazy";
+import { ShoppingPage } from "../component-patterns/pages/ShoppingPage";
 
 type JSXComponent = () => JSX.Element;
 
@@ -32,17 +33,17 @@ const LazyLayout = lazy(
 
 export const routesNav: NavRoute[] = [
   {
+    id: "shopPage",
+    path: "/",
+    to: "/",
+    Component: ShoppingPage,
+    name: "ShoppingPage",
+  },
+  {
     id: "lzy",
     path: "/lazyload/*",
     to: "/lazyload/",
     Component: LazyLayout,
     name: "LazyLayout",
-  },
-  {
-    id: "Nlzy",
-    path: "/no-lazy",
-    to: "/no-lazy",
-    Component: NoLazy,
-    name: "NoLazy",
   },
 ];
