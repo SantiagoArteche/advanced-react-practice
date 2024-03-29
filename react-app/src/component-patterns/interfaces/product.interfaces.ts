@@ -2,6 +2,9 @@ export interface PoductCardProps {
   product: Product;
   children?: React.ReactNode;
   className?: string;
+  onChange?: (args: OnChangeArgs) => void;
+  count?: number;
+  value?: number;
 }
 
 export interface Product {
@@ -11,14 +14,14 @@ export interface Product {
 }
 
 export interface Buttons {
-  counter: number;
   increaseBy: (value: number) => void;
+  shopCount?: number;
 }
 
 export interface ProdContextProps {
-  counter: number;
   product: Product;
   increaseBy: (value: number) => void;
+  count: number;
 }
 
 export interface ProductCardChildrens {
@@ -27,9 +30,26 @@ export interface ProductCardChildrens {
   Buttons: ({
     className,
     style,
+    countShop,
   }: {
     className?: string;
+    countShop?: number;
     style: React.CSSProperties;
   }) => JSX.Element;
-  Image: ({ className }: { className?: string }) => JSX.Element;
+  Image: ({
+    className,
+    img,
+  }: {
+    className?: string;
+    img?: string;
+  }) => JSX.Element;
+}
+
+export interface OnChangeArgs {
+  product: Product;
+  count: number;
+}
+
+export interface ProductInCart extends Product {
+  count: number;
 }

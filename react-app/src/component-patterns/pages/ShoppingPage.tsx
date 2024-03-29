@@ -1,42 +1,49 @@
-import ProductCard, {
-  Buttons,
-  ProdImage,
-  ProductCardHOC,
-  Title,
-} from "../components";
+import ProductCard from "../components";
 
-const product = {
-  id: "1",
-  title: "Coffe mug Card",
-  img: "/coffee-mug.png",
-};
 import "../styles/custom-styles.css";
+import { products } from "../data/products";
+import { useShoppingCart } from "../hooks/useShoppingCart";
+
 export const ShoppingPage = () => {
+  const { onProductCountChange, shoppingCart } = useShoppingCart();
   return (
     <div>
       <h1>ShoppingStore</h1>
       <hr />
       <div className="flex flex-row flex-wrap gap-20">
-        <ProductCard product={product}>
-          <ProductCard.Image />
-          <ProductCard.Title />
-          <ProductCard.Buttons
-            className="text-red-500 text-xl font-bold"
-            style={{ fontSize: 44 }}
-          />
-        </ProductCard>
+        {products.map((product) => (
+          <ProductCard
+            product={product}
+            key={product.id}
+            onChange={onProductCountChange}
+            value={shoppingCart[product.id]?.count || 0}
+          >
+            <ProductCard.Image />
+            <ProductCard.Title />
+            <ProductCard.Buttons
+              className="text-red-500 text-xl font-bold"
+              style={{ fontSize: 44 }}
+            />
+          </ProductCard>
+        ))}
+        <div className="shopping-cart flex gap-5">
+          {Object.entries(shoppingCart).map(([key, product]) => (
+            <ProductCard
+              product={product}
+              className="w-[100px]"
+              key={key}
+              onChange={onProductCountChange}
+              value={product.count}
+            >
+              <ProductCard.Image />
 
-        <ProductCardHOC product={product} className="bg-rades">
-          <ProdImage />
-          <Title className="text-white" />
-          <Buttons className="text-xl text-white" />
-        </ProductCardHOC>
-
-        <ProductCardHOC product={product} className="bg-rades">
-          <ProdImage />
-          <Title className="text-white" />
-          <Buttons className="text-xl text-white" style={{ fontSize: 33 }} />
-        </ProductCardHOC>
+              <ProductCard.Buttons
+                className="text-red-500  font-bold"
+                style={{ fontSize: 22 }}
+              />
+            </ProductCard>
+          ))}
+        </div>
       </div>
     </div>
   );
