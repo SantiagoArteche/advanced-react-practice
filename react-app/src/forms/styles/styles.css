@@ -1,0 +1,18 @@
+form {
+  @apply flex flex-col w-[500px] gap-3;
+}
+input,
+select {
+  @apply mt-1 outline-none p-10;
+}
+button {
+  @apply mt-5 p-3;
+}
+
+span,
+.error-message {
+  @apply text-red-500;
+}
+.has-error {
+  @apply border-2 border-red-500;
+}
