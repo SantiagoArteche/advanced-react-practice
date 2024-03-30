@@ -1,0 +1,47 @@
+[
+  {
+    "type": "text",
+    "name": "firstName",
+    "placeholder": "First Name",
+    "label": "First Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      { "type": "minLength", "value": 5 }
+    ]
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "Email",
+    "label": "Email",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      { "type": "minLength", "value": 5 },
+      { "type": "email" }
+    ]
+  },
+  {
+    "as": "select",
+    "name": "favoriteGame",
+    "placeholder": "Favorite Game",
+    "label": "Favorite Game",
+    "value": "",
+    "options": [
+      { "id": "NULL", "label": "Select an option" },
+      { "id": "DB", "label": "Dragon Ball" },
+      { "id": "NAR", "label": "Naruto" },
+      { "id": "AOT", "label": "Attack On Titans" }
+    ],
+    "validations": [
+      {
+        "type": "required"
+      }
+    ]
+  }
+]

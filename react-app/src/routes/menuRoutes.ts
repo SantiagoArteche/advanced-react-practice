@@ -7,6 +7,8 @@ import { Register } from "../forms/pages/Register";
 import { FormikBasic } from "../forms/pages/FormikBasic";
 import { FormikComponents } from "../forms/pages/FormikComponents";
 import { FormikAbstract } from "../forms/pages/FormikAbstract";
+import { RegisterFormikPage } from "../forms/pages/RegisterFormikPage";
+import { DynamicForm } from "../forms/pages/DynamicForm";
 // import { Home } from "../pages/Home";
 // import { NoLazy } from "../lazyload/pages/NoLazy";
 
@@ -67,5 +69,19 @@ export const routesNav: NavRoute[] = [
     to: "/formikabstract",
     Component: FormikAbstract,
     name: "Formik Abstract",
+  },
+  {
+    id: "registerformik",
+    path: "/registerformik",
+    to: "/registerformik",
+    Component: RegisterFormikPage,
+    name: "Formik Register",
+  },
+  {
+    id: "dynamicform",
+    path: "/dynamicform",
+    to: "/dynamicform",
+    Component: DynamicForm,
+    name: "Formik Dynamic",
   },
 ];

@@ -1,7 +1,7 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
 
-const formSchema = Yup.object({
+export const formSchema = Yup.object({
   firstName: Yup.string()
     .required("First Name is required")
     .min(3, "First name must have at least 3 characters"),
