@@ -1,0 +1,12 @@
+.bg-rades {
+  background-color: blue;
+}
+.text-white {
+  color: white;
+}
+
+.shopping-cart {
+  position: fixed;
+  right: 10px;
+  top: 0px;
+}

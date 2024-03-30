@@ -16,10 +16,8 @@ export const useProducts = ({
   const increaseBy = (value: number) => {
     console.log({ isControlled });
 
-    if (isControlled.current) {
-      return onChange!({ count: value, product });
-    }
-    setCounter(value);
+    setCounter(counter + value);
+    onChange && onChange({ count: counter + value, product });
   };
 
   useEffect(() => {

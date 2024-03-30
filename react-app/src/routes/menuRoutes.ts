@@ -1,6 +1,6 @@
 import { LazyExoticComponent, lazy } from "react";
+import { ShoppingPageInitializer } from "../state-initializer-function-child/pages/ShoppingPageInitializer";
 // import { NoLazy } from "../lazyload/pages/NoLazy";
-import { ShoppingPage } from "../component-patterns/pages/ShoppingPage";
 
 type JSXComponent = () => JSX.Element;
 
@@ -36,7 +36,7 @@ export const routesNav: NavRoute[] = [
     id: "shopPage",
     path: "/",
     to: "/",
-    Component: ShoppingPage,
+    Component: ShoppingPageInitializer,
     name: "ShoppingPage",
   },
   {
