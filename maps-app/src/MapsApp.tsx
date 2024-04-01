@@ -5,8 +5,9 @@ import { HomeScreen } from "./screens/HomeScreen";
 function MapsApp() {
   return (
     <PlacesProvider>
-      <HomeScreen />
-      <MapProvider />
+      <MapProvider>
+        <HomeScreen />
+      </MapProvider>
     </PlacesProvider>
   );
 }
